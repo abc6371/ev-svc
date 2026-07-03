@@ -1,0 +1,19 @@
+DATA:
+  root: /home/c132/CV2026/FRED
+  split: test
+  seqs: [111] # [num], null=all
+
+PIPELINE:
+  buffer_win: 2 # 66ms
+  alpha: 0.2
+  dur_min: 33 # 50% of 66ms
+  disp_min: 5
+  adaptive_disp: true # max(1, min(w,h) * 0.05)
+  size_min: 5
+  size_max: 200
+  age_min: 4 # 4 x 33ms = 132ms
+  max_miss: 4 # 4 x 33ms = 132ms
+
+VIS:
+  out_dir: log/detect_v2
+  interval: 30
