@@ -22,23 +22,26 @@
 | 4 | Component feature 필터링 (duration / displacement / size) → confirmed bbox |
 
 이후 centroid distance 기반 greedy matching으로 tracklet을 구성하고, `age_min` 이상 유지된 blob만 최종 출력합니다.
-
 ## 실행 방법
 
-python3 detect_v2.py --config detectv2.yaml --seqs 81 82 
-python3 detect_v2.py --config detectv2.yaml --seq 82 --vis --max-windows 200 
+```
+python3 detect_v2.py --config detectv2.yaml --seqs 81 82
+python3 detect_v2.py --config detectv2.yaml --seq 82 --vis --max-windows 200
+```
 
-option
---config PATH	YAML 파일 지정 
---seq N	시퀀스 하나만 실행 
---seqs N N ...	복수 시퀀스 실행 
---vis	평가 + PNG 저장 (vis_interval마다) 
---vis-only	PNG 저장만, 평가/CSV 없음 
---vod	mp4 저장, 평가 없음 
---rgb	--vod와 함께: RGB+이벤트 합성 영상 
---max-windows N	처음 N 윈도우만 실행 (디버깅용) 
---save-video	평가와 동시에 mp4 저장 
---null-test	GT bbox 랜덤 셔플 → null test 
+| 옵션 | 설명 |
+|---|---|
+| `--config PATH` | YAML 파일 지정 |
+| `--seq N` | 시퀀스 하나만 실행 |
+| `--seqs N N ...` | 복수 시퀀스 실행 |
+| `--vis` | 평가 + PNG 저장 (`vis_interval`마다) |
+| `--vis-only` | PNG 저장만, 평가/CSV 없음 |
+| `--vod` | mp4 저장, 평가 없음 |
+| `--rgb` | `--vod`와 함께: RGB+이벤트 합성 영상 |
+| `--max-windows N` | 처음 N 윈도우만 실행 (디버깅용) |
+| `--save-video` | 평가와 동시에 mp4 저장 |
+| `--null-test` | GT bbox 랜덤 셔플 → null test |
+
 
 
 
