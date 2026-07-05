@@ -1,18 +1,15 @@
 # EV-SVC — Event-based Drone Detection (Learning-free v2)
-
 이벤트 카메라 스트림에서 학습 없이(learning-free) 드론을 탐지하는 파이프라인입니다.
 33ms 윈도우 단위로 EMA 배경 제거 → residual event 추출 → (x, y, t) voxel 3D 연결요소 분석을 통해
 바운딩 박스를 추출하고, 간단한 centroid 기반 tracklet 매칭으로 추적합니다.
 
 ## 구성 파일
-
 | 파일 | 설명 |
 |---|---|
 | `detect_v2.py` | 탐지 파이프라인 메인 스크립트 |
 | `detectv2.yaml` | 실행 파라미터(config) |
 
 ## Pipeline
-
 | Stage | 내용 |
 |---|---|
 | 0 | EMA 기반 배경(baseline) 추정 |
@@ -22,8 +19,8 @@
 | 4 | Component feature 필터링 (duration / displacement / size) → confirmed bbox |
 
 이후 centroid distance 기반 greedy matching으로 tracklet을 구성하고, `age_min` 이상 유지된 blob만 최종 출력합니다.
-## 실행 방법
 
+## 실행 방법
 ```
 python3 detect_v2.py
 python3 detect_v2.py --config detectv2.yaml --seq 82 --vis --max-windows 200
@@ -46,7 +43,7 @@ python3 detect_v2.py --config detectv2.yaml --seq 82 --vis --max-windows 200
 
 
 ## Demo Videos
-
+초록색=GT, 파란색=탐지
 - **빛,벌레**: https://www.youtube.com/watch?v=7NSE5ZO_3hc
 - **야간**: https://www.youtube.com/watch?v=zT8xIZ-AG9U
 - **실내**: https://www.youtube.com/watch?v=LnpyTfbSeaA
