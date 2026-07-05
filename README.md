@@ -1,6 +1,6 @@
 # EV-SVC — Event-based Drone Detection (Learning-free v2)
 
-이벤트 카메라(DVS) 스트림에서 학습 없이(learning-free) 드론을 탐지하는 파이프라인입니다.
+이벤트 카메라 스트림에서 학습 없이(learning-free) 드론을 탐지하는 파이프라인입니다.
 33ms 윈도우 단위로 EMA 배경 제거 → residual event 추출 → (x, y, t) voxel 3D 연결요소 분석을 통해
 바운딩 박스를 추출하고, 간단한 centroid 기반 tracklet 매칭으로 추적합니다.
 
