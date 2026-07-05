@@ -25,7 +25,7 @@
 ## 실행 방법
 
 ```
-python3 detect_v2.py --config detectv2.yaml --seqs 81 82
+python3 detect_v2.py
 python3 detect_v2.py --config detectv2.yaml --seq 82 --vis --max-windows 200
 ```
 
